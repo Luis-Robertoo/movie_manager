@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MovieManager.BLL.Entities.Movie>
+
+@{
+    ViewData["Title"] = "Registro de cliente";
+}
+
+<div class="text-center">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.Name("Nome")
+                </th>
+                <th>
+                    @Html.Name("Valor locação")
+                </th>
+                <th>
+                    @Html.Name("Tempo de filme (minutos)")
+                </th>
+                <th>
+                    @Html.Name("Ações")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RentalValue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><button style="background: #00010f; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Editar</button></a>
+                        <a asp-action="Details" asp-route-id="@item.Id"><button style="background: #ffa500; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Detalhes</button></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><button style="background: #FF1000; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Deletar</button></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br>
+    <a asp-action="Add"><button style="background: #9400d3; border-radius: 6px; padding: 10px 90px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Adicionar</button></a>
+    <br>
+</div>

@@ -1,0 +1,43 @@
+﻿@model MovieManager.BLL.Entities.Movie
+@{
+}
+
+<div style="text-align:left;">
+    <h4> Seller</h4>
+    <hr />
+    <dl>
+        <div>
+            <label asp-for="Name" class="control-label">Nome</label>
+            <input asp-for="Name" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="MovieKind" class="control-label">Tipo filme</label>
+            <input asp-for="MovieKind" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="Duration" class="control-label">Duração</label>
+            <input asp-for="Duration" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="AgeGroup" class="control-label">Idade apropriada</label>
+            <input asp-for="AgeGroup" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="Director" class="control-label">Diretor</label>
+            <input asp-for="Director" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="RentalValue" class="control-label">Valor locação</label>
+            <input asp-for="RentalValue" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="Description" class="control-label">Descricao</label>
+            <input asp-for="Description" class="form-control"/>
+        </div>
+    </dl>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default"> <button style="background: #00010f; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Editar</button></a>
+        <a asp-action="Index"> <button style="background: #FF1000; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Voltar</button></a>
+    </div>
+</div>

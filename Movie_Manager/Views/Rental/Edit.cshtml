@@ -1,0 +1,43 @@
+﻿@model MovieManager.BLL.Entities.Rental
+@{
+}
+
+<div class="row">
+    <div class=" col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+            <div>
+                <label>Filme</label>
+                <div class="control-label">
+                    @Html.DropDownList("MovieId","Selecione o filme")
+                </div>
+
+                <label>Locador</label>
+                <div class="editor-field">
+                    @Html.DropDownList("CustomerId","Selecione o locador")
+                </div>
+            </div>
+            <div
+                 <label asp-for="RentalDateStart" class="control-label">Data locação</label>
+                 <input asp-for="RentalDateStart" class="form-control"/>
+            </div>
+            <div
+                 <label asp-for="RentalForeseenDateEnd" class="control-label">Data de devolução prevista</label>
+                 <input asp-for="RentalForeseenDateEnd" class="form-control"/>
+            </div>
+            <div
+                 <label asp-for="ReturnDate" class="control-label">Data devolutiva</label>
+                 <input asp-for="ReturnDate" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10" style="padding: 6px 8py margin-top: 100">
+                    <a asp-action="Index"><button style="background: #FF1000; border-radius: 4px; padding: 6px 8py; cursor: pointer; color: #fff; border: none; font-size: 16px;">Voltar</button></a>
+
+                    <a asp-action="Save"><button style="background: #006400; border-radius: 4px;bottom: 0px; padding: 6px 8py; cursor: pointer; color: #fff; border: none; font-size: 16px;">Salvar</button></a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

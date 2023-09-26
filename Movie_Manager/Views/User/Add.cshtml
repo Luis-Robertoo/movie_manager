@@ -1,0 +1,35 @@
+﻿@model MovieManager.BLL.Entities.User
+@{
+}
+
+<h2>Usuario</h2>
+<hr />
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    <div class="row">
+        <div class=" col-md-4">
+            <form asp-action="Add">
+                <div>
+                    <label asp-for="Name" class="control-label">Nome</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div>
+                    <label asp-for="Age" class="control-label">Idade</label>
+                    <input asp-for="Age" class="form-control" />
+                </div>
+                <div>
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+                <div>
+                    <label asp-for="Phone" class="control-label">Telefone</label>
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <a asp-action="Index"> <button style="background: #006400; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Salvar</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+}

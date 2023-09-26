@@ -1,0 +1,35 @@
+﻿@model MovieManager.BLL.Entities.Rental
+@{
+}
+
+<div style="text-align:left;">
+    <h4> Locação</h4>
+    <hr />
+    <dl>
+        <div>
+            <label asp-for="Movie.Name" class="control-label">Filme</label>
+            <input asp-for="Movie.Name" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="Customer.Name" class="control-label">Locatario</label>
+            <input asp-for="Customer.Name" class="form-control"/>
+        </div>
+            <div>
+            <label asp-for="RentalDateStart" class="control-label">Data locação</label>
+            <input asp-for="RentalDateStart" class="form-control"/>
+        </div>
+            <div>
+            <label asp-for="RentalForeseenDateEnd" class="control-label">Data devolutiva prevista</label>
+            <input asp-for="RentalForeseenDateEnd" class="form-control"/>
+        </div>
+        <div>
+            <label asp-for="ReturnDate" class="control-label">Data de devolução</label>
+            <input asp-for="ReturnDate" class="form-control"/>
+        </div>
+    </dl>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default"> <button style="background: #00010f; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Editar</button></a>
+        <a asp-action="Index"> <button style="background: #FF1000; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Voltar</button></a>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MovieManager.BLL.Entities.Rental>
+
+@{
+    ViewData["Title"] = "Registro de usuario";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.Name("Filme")
+                </th>
+                <th>
+                    @Html.Name("locatário")
+                </th>
+                <th>
+                    @Html.Name("Data locação")
+                </th>
+                <th>
+                    @Html.Name("Data prevista devolutiva")
+                </th>
+                <th>
+                    @Html.Name("Opções")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Movie.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RentalDateStart)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RentalForeseenDateEnd)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><button style="background: #00010f; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Editar</button></a>
+                        <a asp-action="Details" asp-route-id="@item.Id"><button style="background: #ffa500; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Detalhes</button></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><button style="background: #FF1000; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Deletar</button></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br>
+    <a asp-action="Add"><button style="background: #9400d3; border-radius: 6px; padding: 10px 90px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Adicionar</button></a>
+    <br>
+</div>

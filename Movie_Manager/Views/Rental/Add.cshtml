@@ -1,0 +1,42 @@
+﻿@model MovieManager.BLL.Entities.Rental
+@{
+}
+
+<h2>Locação</h2>
+<hr />
+
+@using (Html.BeginForm("Create", "Rental", FormMethod.Post))
+{
+    <div class="row">
+        <div class=" col-md-4">
+            <form asp-action="Add">
+                <div>
+                    <label asp-for="RentalDateStart" class="control-label">Data de locação</label>
+                    <input asp-for="RentalDateStart" class="form-control" />
+                </div>
+                <div>
+                    <label asp-for="RentalForeseenDateEnd" class="control-label">Data prevista para entrega </label>
+                    <input asp-for="RentalForeseenDateEnd" class="form-control" />
+                </div>
+                <div>
+                    <label asp-for="ReturnDate" class="control-label">Data devolutiva</label>
+                    <input asp-for="ReturnDate" class="form-control" />
+                </div>
+                <div>
+                    <label>Filme</label>
+                    <div class="control-label">
+                        @Html.DropDownList("MovieId","Selecione o filme")
+                    </div>
+
+                    <label>Locador</label>
+                    <div class="editor-field">
+                        @Html.DropDownList("CustomerId","Selecione o locador")
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a asp-action="Index"> <button style="background: #006400; border-radius: 4px; padding: 8px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Salvar</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+}
